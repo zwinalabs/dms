@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+    jQuery( document ).ready(function() {
+        jQuery('#ged_title').val("");
+        jQuery('#ged_url').val("");
+    });
+</script>
+<%= error_messages_for 'ged' %>
+<p>
+  <%= hidden_field(:ged, :issue_id, value: @issue.id) %>
+  Title : <%= text_field(:ged, :title, class: 'code_input', size: 20, true: 'autofocus') %>
+  Link : <%= url_field(:ged, :url, class: 'code_input', size: 60, required: 'required') %>
+    <%= submit_tag(l(:button_add), id: "ged_submit_btn")  %>
+    <%= link_to_function l(:button_cancel), '$("#new-ged-form").hide();'%>
+    <%= javascript_tag "setPredecessorFieldsVisibility();" %>
+</p>

@@ -1,0 +1,37 @@
+<%
+   if @geeds.nil?
+       # Liste of all Geds link where ged.issue_id = issue.id
+       @geeds = Ged.all(:conditions => ["issue_id=?", issue.id])
+   end
+%>
+<div class="contextual">
+  <% #if User.current.allowed_to?(:manage_issue_geds, @project) %>
+  <%= toggle_link l(:button_add), 'new-ged-form', {:focus => 'ged_url'} %>
+  <% # end %>
+</div>
+<p><strong><%=l(:label_geds)%></strong></p>
+<form>
+  <table id="list_geds_table" class="table_geds">
+    <% @geeds.to_a.each do |ged| %>
+        <tr id="ged-<%=ged.id%>">
+          <td class="title"><%=ged.title %></td>
+          <td class="start_date"><%= link_to ged.url[0,30]+"...", ged.url, target: "_blank", class: "btn btn-large btn-primary" %></td>
+          <td class="buttons"><%= link_to image_tag('delete.png'),
+                                          {:controller => "geds", :action => "remove_ged", :id => ged.id.to_i},
+                                          :remote => true,
+                                          :data => {:confirm => l(:text_are_you_sure)},
+                                          :title => l(:label_ged_delete) %>
+            <span class="author" style="color: #888;font-size: 0.9em;"><%=ged.user%>, <%= ged.created_at.strftime("%d/%m/%Y %H:%M") %></span>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</form>
+<%= form_for @geed, {
+        :as => :ged, :remote => true,
+        :url => geds_path,
+        :method => :post,
+        :html => {:id => 'new-ged-form', :style => (@geed? '' : 'display: none;')}
+} do |f| %>
+    <%= render :partial => 'geds/form', :locals => {:f => f, :issue => @issue}%>
+<% end %>

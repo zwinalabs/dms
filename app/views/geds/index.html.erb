@@ -1,0 +1,24 @@
+<h1>Listing geds</h1>
+
+<table>
+  <tr>
+    <th>Titre</th>
+    <th>Url</th>
+    <th></th>
+  </tr>
+
+<% @geds.each do |ged| %>
+   <tr id="ged-<%=ged.id%>">
+    <td><%= ged.title[0, 30]+"..."%></td>
+    <td><%= link_to ged.url[0, 30]+"...", ged.url, target: "_blank", class: ""%></td>
+    <td><%= link_to 'Delete', ged_path(ged), method: :delete, :remote => true, data: { confirm: 'Are you sure?' }  %>
+      <%= link_to( "supprimer", :controller => "geds", :action => "remove_ged", :remote => true, :id => ged.id.to_i) %>
+    </td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ged', new_ged_path %>

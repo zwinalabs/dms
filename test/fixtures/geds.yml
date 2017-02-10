@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: Lorem 001
+  url: "https://docs.google.com/a/audaxis.com/document/d/1wVqfZXEFZUQmLBvrrU5LLTDHvD7BBRHIyyd_pgO9PY8/edit?usp=sharing"
+  issue: 
+  user: 
+
+two:
+  title: Lorem 002
+  url: "https://docs.google.com/a/audaxis.com/document/d/1wVqfZXEFZUQmLBvrrU5LLTDHvD7BBRHIyyd_pgO9PY8/edit?usp=sharing"
+  issue: 
+  user: 

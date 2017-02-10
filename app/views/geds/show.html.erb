@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Title:</b>
+  <%= @ged.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @ged.url %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%= @ged.issue %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @ged.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_ged_path(@ged) %> |
+<%= link_to 'Back', geds_path %>

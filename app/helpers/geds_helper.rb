@@ -1,0 +1,2 @@
+module GedsHelper
+end

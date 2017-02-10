@@ -1,0 +1,8 @@
+# English strings go here for Rails i18n
+fr:
+  # my_label: "My label"
+  label_geds: Liens GED
+  label_ged_delete: Supprimer lien GED
+  project_module_all_files: Tous les fichiers
+  all_project_files: Tous les fichiers de projet
+  permission_manage_geds: Gérer les liens GED

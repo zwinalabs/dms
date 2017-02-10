@@ -1,0 +1,6 @@
+<% if User.current.allowed_to?(:manage_geds, @issue.project) %>
+    <hr />
+    <div id="geds_list">
+      <%= render :partial => 'geds/ged', :locals => { :issue => @issue, :geeds => @geds } %>
+    </div>
+<% end %>
