@@ -1,2 +1,29 @@
-# dms
-DMS is a Redmine plugin used to add list of links (shared doc, google drive, ...) to the issues show view at the bottom of description.
+# Redmine document management system (DMS) Plugin
+
+DMS is a Redmine plugin to add list of links (shared doc, google drive, ...) to the issues show view at the bottom of description.
+
+## Features
+
+* Add new bloc in issues show interface
+* Remove button for each DMS link
+* An optional title field to specify the doc link
+* Created at date and other infromations
+
+## Install
+
+1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins
+Make sure the plugin is installed to <tt>/plugins/dms</tt>.
+2. This plugin need database migrations
+3. Restart your Redmine
+
+## Usage
+
+To be able to use the dms plugin you must activate the plugin loock at projects tab in  <tt>/settings</tt>, <tt>/roles</tt> by user, and at project <tt>/settings/modules</tt> must be Administrator.
+Then, the add dms form and links list is displayed on the show issue interface after "Description" section ( in hook : view_issues_show_description_bottom).
+
+## Feedback
+
+Feedback is very much appreciated.
+This plugin is tested on Redmine 2.3, backed with a MySQL-database.
+
+Description goes here
